@@ -21,7 +21,7 @@ function scrapeAllEpisodes(url, baseURL) {
         let episodeURL = baseURL + episodeHref;
         console.log(episodeURL);
         let episodeNum = episodeHref.split('-')[1].replace('.shtml', '');
-        let fileName = `./scripts/${episodeNum}.txt`;
+        let fileName = `./seinfeld_raw_scripts/${episodeNum}.txt`;
 
         if ((!fs.existsSync(fileName)) || (fs.statSync(fileName).size == 0)) {
           scrapeEpisode(episodeNum, episodeURL);
@@ -51,7 +51,7 @@ function scrapeEpisode(episodeNum, url) {
 }
 
 function saveScript(id, script) {
-  let fileName = `./scripts/${id}.txt`;
+  let fileName = `./seinfeld_raw_scripts/${id}.txt`;
   fs.writeFile(fileName, script, err => {
     if (!err) {
       console.log(`Episode ${id} file successfully written!`);

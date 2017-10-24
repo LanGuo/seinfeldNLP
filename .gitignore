@@ -1,0 +1,15 @@
+# Dependency directories
+node_modules
+
+# Unprocessed scripts
+seinfeld_raw_scripts
+
+# Mac-specific
+.DS_Store
+
+*~
+.#*
+.emacs*
+.~*
+
+package-lock.json

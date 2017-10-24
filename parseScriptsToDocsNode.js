@@ -97,8 +97,8 @@ function constructEpisodeDoc (metaInfoArray, extractedScriptArray) {
     }
   }
   episode.dialogues = dialogues;
-  episode['_id'] = episode.episodeIndex; // No need to specify,
-  //episode['_type'] = 'episode'; // these are defined automatically
+  episode['_id'] = 'Episode_' + episode.episodeIndex; // No need to specify,
+  episode['type'] = 'Episode'; // these are defined automatically
   //return {episode, dialogues};
   return episode;
 }

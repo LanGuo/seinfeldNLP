@@ -20,7 +20,10 @@ function getEpisodeById(id, cbBucket) {
 }
 
 function selectDialoguesByScene(sceneKeyword, cbBucket) {
-  query_string = (`SELECT dialogues.utterance FROM default WHERE ANY array_element IN SUFFIXES(dialogues.scene) SATISFIES array_element LIKE "${sceneKeyword}"`);
+  query_string = (`SELECT dialogues.character, dialogues.utterance
+    FROM default AS d
+    UNNEST d.dialogues AS dialogues
+    WHERE CONTAINS(dialogues.scene, "${sceneKeyword}")`);
   query = N1qlQuery.fromString(query_string); //, keyword=sceneKeyword);
   console.log(query);
   cbBucket.query(query, function (err, rows) {
