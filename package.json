@@ -3,9 +3,11 @@
   "author": "Lan Guo",
   "description": "An Nodejs app to scrape, parse, query and do NLP on scripts of Seinfeld",
   "dependencies": {
+    "@stdlib/stdlib": "0.0.29",
     "cheerio": "^1.0.0-rc.2",
     "couchbase": "^2.4.1",
     "request": "^2.83.0",
-    "simple-text-parser": "^1.0.0"
+    "simple-text-parser": "^1.0.0",
+    "text-miner": "^1.0.5"
   }
 }
