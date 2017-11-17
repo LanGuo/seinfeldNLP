@@ -13,3 +13,6 @@ seinfeld_raw_scripts
 .~*
 
 package-lock.json
+
+# local config file
+config.json

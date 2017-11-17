@@ -44,9 +44,11 @@ function getTopTermsForTopic(model, topicInd, numOfTopTerms) {
 
 
 const fs = require('fs');
-const obj = JSON.parse(fs.readFileSync('./the_reverse_peephole.txt', 'utf8'));
+const obj = JSON.parse(fs.readFileSync('./episode7.txt', 'utf8'));
 //console.log(obj);
 const cleanCorpus = createCorpusFromUtterances(obj);
-console.log(cleanCorpus);
+//console.log(cleanCorpus);
 const ldaModel = ldaTopicModel(cleanCorpus, 3, 1000, 100, 10);
-const terms = getTopTermsForTopic(ldaModel, 0);
+getTopTermsForTopic(ldaModel, 0);
+getTopTermsForTopic(ldaModel, 1);
+getTopTermsForTopic(ldaModel, 2);

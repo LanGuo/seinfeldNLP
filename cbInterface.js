@@ -2,14 +2,17 @@ const couchbase = require('couchbase');
 const N1qlQuery = couchbase.N1qlQuery;
 const fs = require('fs');
 
-function upsertEpisodeIntoDb(id, episodeDoc, cbBucket) {
+function upsertEpisodeIntoDb(id, episodeDoc, cbBucket, done) {
   cbBucket.upsert(id, episodeDoc,
   function (err, result) {
     if (err) {
       console.log(`Error when update/inseting episode ${id}`);
       throw err;
     }
-    console.log(`Updated/inseted episode ${id}`);
+    else if (result) {
+      console.log(`Updated/inseted episode ${id}`);
+      done;
+    }
   });
 }
 
@@ -114,16 +117,16 @@ function selectDialoguesBySceneAndCharacter(sceneKeywords, characterName, cbBuck
   });
 }
 
-function createIndex(indexName, indexStr, cbBucket) {
+function createIndex(indexStr, cbBucket) {
   const query = couchbase.N1qlQuery.fromString(indexStr);
-  console.log(query);
+  //console.log(query);
   cbBucket.query(query, function(err, res) {
     if (err){
       console.log("ERR creating index:",err);
     }
 
     if (res) {
-      console.log("Created Index:" + indexName);
+      console.log("Created Index:" + indexStr);
     }
   });
 }

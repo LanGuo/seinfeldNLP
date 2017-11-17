@@ -26,7 +26,7 @@ function parsingScriptFile(filePath) {
     return { season: season, episodeInSeason: episode };
   });
   // Capture episode and title info
-  metaInfoParser.addRule(/Episode (\d+) - (.+)/g, function(text, episodeIndex, title) {
+  metaInfoParser.addRule(/Episodes* (\d*&*\d+) - (.+)/g, function(text, episodeIndex, title) {
     return { episodeIndex: episodeIndex, title: title };
   });
   // Capture aired date info
@@ -104,14 +104,16 @@ function constructEpisodeDoc (metaInfoArray, extractedScriptArray) {
 }
 
 /*
+// Usage
 console.log('Running script parser!')
-let {metaInfoArray, extractedScriptArray} = parsingScriptFile('./scripts/06.txt', preprocesser, metaInfoParser, scriptParser);
-//console.log(metaInfoArray);
+let {metaInfoArray, extractedScriptArray} = parsingScriptFile('./seinfeld_raw_scripts/100and101.txt');
+console.log(metaInfoArray);
 //console.log(extractedScriptArray.slice(5,15));
 //let {episode, dialogues} = constructEpisodeDoc(metaInfoArray, extractedScriptArray);
 let episode = constructEpisodeDoc(metaInfoArray, extractedScriptArray);
 console.log('episode', Object.keys(episode));
-console.log('dialogues', episode.dialogues.length, Object.keys(episode.dialogues[0]));
+console.log(episode.episodeIndex, episode._id);
+//console.log('dialogues', episode.dialogues.length, Object.keys(episode.dialogues[0]));
 
 
 //const saveToDb = require('./ottomanSaveEpisodeInDatabase');
