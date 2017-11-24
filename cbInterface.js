@@ -57,7 +57,7 @@ function selectDialoguesByScene(sceneKeywords, bucketName, cbBucket, outputFileN
         return (initialStr + rowStr);
       };
       let results = rows.map(function(row) {
-        return `${row.character}: ${row.utterance} `;
+        return `${row.character}: ${row.utterance}\n`;
       })
         .reduce(buildResult, '');
       fs.writeFile(filePath, results, err => {
@@ -68,6 +68,7 @@ function selectDialoguesByScene(sceneKeywords, bucketName, cbBucket, outputFileN
   });
 }
 
+/*
 function selectDialoguesByCharacter(characterName, cbBucket, outputFileName) {
  query_string = (`SELECT dialogues.scene, dialogues.utterance
   FROM ${cbBucket} AS d
@@ -129,6 +130,7 @@ function selectDialoguesBySceneAndCharacter(sceneKeywords, characterName, cbBuck
     }
   });
 }
+*/
 
 function createIndex(indexStr, cbBucket) {
   const query = couchbase.N1qlQuery.fromString(indexStr);
