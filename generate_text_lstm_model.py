@@ -35,11 +35,14 @@ def sample(preds, temperature=1.0):
 
 # Build the same model and load the network weights from the model with lowest loss
 model = Sequential()
-model.add(LSTM(256, input_shape=(maxlen, len(chars))))
+#model.add(LSTM(256, input_shape=(maxlen, len(chars))))
+model.add(LSTM(256, input_shape=(maxlen, len(chars)), return_sequences=True))
+model.add(Dropout(0.2))
+model.add(LSTM(256))
 model.add(Dropout(0.2))
 model.add(Dense(len(chars)))
 model.add(Activation('softmax'))
-weightsFilename = "dialogues-jerry-apt-weights-adam-30-0.9964.hdf5"
+weightsFilename = "dialogues-jerry-apt-weights-adam-2layers-28-0.9175.hdf5"
 #"dialogues-jerry-apt-weights-improvement-09-1.3708.hdf5"
 weightsFilepath = os.path.join('/home/lan/src/seinfeldNLPNode/models/', weightsFilename)
 model.load_weights(weightsFilepath)
