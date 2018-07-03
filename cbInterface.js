@@ -25,6 +25,34 @@ function getEpisodeById(id, cbBucket) {
   });
 }
 
+function queryDbAndSaveResults(queryStr, resultFormatStr, cbBucket, outputFileName) {
+  // resultFormatStr should be in the form of `${row.key}`
+  query = N1qlQuery.fromString(queryStr);
+  cbBucket.query(query, function(err, rows) {
+    //console.log("Got rows: %s", rows.length);
+    if (err) {
+      console.log('ERR when querying bucket', err);
+    }
+    if (rows) {
+      const filePath = path.join(config.seinfeld.resultsDir, outputFileName);
+      let buildResult = function (initialStr, rowStr) {
+        return (initialStr + rowStr);
+      };
+      let results = rows.map(function(row) {
+        if (typeof resultFormatStr === 'string' && resultFormatStr.length !== 0) {
+          return resultFormatStr;
+        }
+        else return `${Object.values(row)}\n`;
+      })
+        .reduce(buildResult, '');
+      fs.writeFile(filePath, results, err => {
+        if (!err) {console.log(`${results.length} characters successfully written to file.`);}
+        else {console.log('File writing ERR', err);}
+      });
+    }
+  });
+}
+
 function selectDialoguesByScene(sceneKeywords, bucketName, cbBucket, outputFileName) {
   if (sceneKeywords.length == 1) {
     query_string = (`SELECT dialogues.character, dialogues.utterance
@@ -68,7 +96,7 @@ function selectDialoguesByScene(sceneKeywords, bucketName, cbBucket, outputFileN
   });
 }
 
-/*
+
 function selectDialoguesByCharacter(characterName, cbBucket, outputFileName) {
  query_string = (`SELECT dialogues.scene, dialogues.utterance
   FROM ${cbBucket} AS d
@@ -91,7 +119,7 @@ function selectDialoguesByCharacter(characterName, cbBucket, outputFileName) {
   });
 
 }
-
+/*
 function selectDialoguesBySceneAndCharacter(sceneKeywords, characterName, cbBucket, outputFileName) {
   //console.log(sceneKeywords);
   if ((sceneKeywords.length == 0) | (!characterName)) {
@@ -146,4 +174,4 @@ function createIndex(indexStr, cbBucket) {
   });
 }
 
-module.exports = {upsertEpisodeIntoDb, getEpisodeById, createIndex, selectDialoguesByScene, selectDialoguesByCharacter, selectDialoguesBySceneAndCharacter};
+module.exports = {upsertEpisodeIntoDb, getEpisodeById, createIndex, selectDialoguesByScene, queryDbAndSaveResults, selectDialoguesByCharacter};

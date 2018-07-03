@@ -21,6 +21,9 @@ def generate_context_word_dict_from_text(text, n):
     tokenizedText = word_tokenize(text)
     ngramsFromText = list(ngrams(tokenizedText, n))  # The result is a list of tuples containing n consecutive words
 
+    #words = text.split(' ')
+    #ngramsFromText = list(ngrams(words, n))  # The result is a list of tuples containing n consecutive words
+
     contextWordDict = {}
     for ngram in ngramsFromText:
         context = ngram[:-1]  # This is a tuple so can be a dictionary key
@@ -37,55 +40,71 @@ def generate_text_from_seed(seed, contextWordDict):
     Takes a random tuple of words (seed) and generate the next word based on contextWordDict.
     '''
     assert(isinstance(seed, tuple)), 'seed must be a tuple'
-    contextLength = len(list(contextWordDict.keys())[0])
-    if len(seed) >= contextLength:
+    contextLength = len(contextWordDict)
+    if len(seed) == 0:
+        #print('Please provide a seed context!')
+        seed = [*contextWordDict][numpy.random.choice(contextLength)]
+    elif len(seed) >= contextLength:
         seed = seed[-contextLength:]
-        if seed in contextWordDict:
-            nextWord = numpy.random.choice(contextWordDict[seed])
-        else:
+        if seed not in contextWordDict:
             potentialContexts = [context for context in contextWordDict.keys() if (seed[-1] in context or seed[0] in context)]
-            seed = potentialContexts[numpy.random.choice(len(potentialContexts))]
-            nextWord = numpy.random.choice(contextWordDict[seed])
-    elif len(seed) < contextLength:
+            if not len(potentialContexts):
+                seed = [*contextWordDict][numpy.random.choice(contextLength)]
+            else:
+                seed = potentialContexts[numpy.random.choice(len(potentialContexts))]
+    else:
         potentialContexts = [context for context in contextWordDict.keys() if seed in context]
-        seed = potentialContexts[numpy.random.choice(len(potentialContexts))]
-        nextWord = numpy.random.choice(contextWordDict[seed])
-    elif len(seed) == 0:
-        print('Please provide a seed context!')
+        if not len(potentialContexts):
+            seed = [*contextWordDict][numpy.random.choice(contextLength)]
+        else:
+            seed = potentialContexts[numpy.random.choice(len(potentialContexts))]
+
+    nextWord = numpy.random.choice(contextWordDict[seed])
 
     return nextWord
 
 if __name__ == '__main__':
-    CASE = 2
+    #CASE = 2
 
-    inputPath = '/home/lan/src/seinfeldNLPNode/query_results/dialogues_jerry_apartment.txt'
+    #topic = 'jerry_monologue'
+    #topic = 'dialogues_jerry_apartment'
+    topic = 'jerry_all_dialogues'
+    inputPath = '/home/lan/src/seinfeldNLPNode/query_results/{}.txt'.format(topic)
+    #'/home/lan/src/seinfeldNLPNode/query_results/dialogues_jerry_apartment.txt'
     sourceText = open(inputPath).read().lower()
-    n = 2  # The degree of ngram to base the contextWordDict on
+    n = 3  # The degree of ngram to base the contextWordDict on
     seedLen = n - 1
     generateLen = 300  # Number of words to generate as a squence
+    regenerateNgramDict = False
 
-    if CASE == 1:
+    #if CASE == 1:
+    dictFilename = "context-to-word-dict-based-on-{}-gram.pickle".format(n)
+    dictDir = os.path.join('/home/lan/src/seinfeldNLPNode/models/', topic)
+    if not os.path.exists(dictDir):
+        os.mkdir(dictDir)
+    dictFilepath = os.path.join(dictDir, dictFilename)
+
+    if (not os.path.exists(dictFilepath)) or regenerateNgramDict:
+        print('Generating {} gram context dictionary.'.format(n))
         contextWordDict = generate_context_word_dict_from_text(sourceText, n)
-        dictFilename = "context-to-word-dict-based-on-{}-gram.pickle".format(n)
-        dictFilepath = os.path.join('/home/lan/src/seinfeldNLPNode/models/', dictFilename)
         pickle_out = open(dictFilepath,"wb")
         pickle.dump(contextWordDict, pickle_out)
         pickle_out.close()
-
-    elif CASE == 2:
-        tokenizedText = word_tokenize(sourceText)
-        startInd = numpy.random.randint(0, len(tokenizedText))
-        seed = tuple(tokenizedText[startInd: startInd + seedLen])
-        result = seed
-        dictFilename = "context-to-word-dict-based-on-{}-gram.pickle".format(n)
-        dictFilepath = os.path.join('/home/lan/src/seinfeldNLPNode/models/', dictFilename)
+    else:
         pickle_in = open(dictFilepath,"rb")
         contextWordDict = pickle.load(pickle_in)
 
-        print("--- Generating text based on {} gram model and markov train using seed '{}' ---\n".format(n,seed))
-        for i in range(generateLen):
-            nextWord = generate_text_from_seed(seed, contextWordDict)
-            result += (nextWord,)
-            seed = tuple(result[-seedLen:])
+    #elif CASE == 2:
+    #tokenizedText = word_tokenize(sourceText)
+    #startInd = numpy.random.randint(0, len(tokenizedText))
+    #seed = tuple(tokenizedText[startInd: startInd + seedLen])
+    seed = ()
+    result = str(*seed)
 
-        print(' '.join(result))
+    print("--- Generating text based on {} gram model and markov train using seed '{}' ---\n".format(n,seed))
+    for i in range(generateLen):
+        nextWord = generate_text_from_seed(seed, contextWordDict)
+        result += ' ' + nextWord + ' '
+        seed = tuple(result.split(' ')[-seedLen:])
+
+    print(result)

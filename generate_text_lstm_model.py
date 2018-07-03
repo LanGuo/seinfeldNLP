@@ -12,7 +12,8 @@ from keras.layers import Dropout
 from keras.optimizers import RMSprop
 import numpy as np
 
-inputPath = '/home/lan/src/seinfeldNLPNode/query_results/dialogues_jerry_apartment.txt'
+topic = 'all_dialogues'
+inputPath = '/home/lan/src/seinfeldNLPNode/query_results/{}.txt'.format(topic)
 text = open(inputPath).read().lower()
 print('corpus length:', len(text))
 
@@ -35,16 +36,20 @@ def sample(preds, temperature=1.0):
 
 # Build the same model and load the network weights from the model with lowest loss
 model = Sequential()
-#model.add(LSTM(256, input_shape=(maxlen, len(chars))))
-model.add(LSTM(256, input_shape=(maxlen, len(chars)), return_sequences=True))
+model.add(LSTM(256, input_shape=(maxlen, len(chars))))
+#model.add(LSTM(256, input_shape=(maxlen, len(chars)), return_sequences=True))
 model.add(Dropout(0.2))
-model.add(LSTM(256))
-model.add(Dropout(0.2))
+#model.add(LSTM(256))
+#model.add(Dropout(0.2))
 model.add(Dense(len(chars)))
 model.add(Activation('softmax'))
-weightsFilename = "dialogues-jerry-apt-weights-adam-2layers-28-0.9175.hdf5"
+weightsDir = os.path.join('/home/lan/src/seinfeldNLPNode/models/', 'lstm_{}_maxlen30_adam_1layers'.format(topic))
+weightsFilename = "weights-30-1.2167.hdf5"
+#"weights-30-0.7797.hdf5"
+#"dialogues-jerry-monologue-weights-adam-2layers-30-0.4382.hdf5"
+#"dialogues-jerry-apt-weights-adam-2layers-28-0.9175.hdf5"
 #"dialogues-jerry-apt-weights-improvement-09-1.3708.hdf5"
-weightsFilepath = os.path.join('/home/lan/src/seinfeldNLPNode/models/', weightsFilename)
+weightsFilepath = os.path.join(weightsDir, weightsFilename)
 model.load_weights(weightsFilepath)
 optimizer = RMSprop(lr=0.01) #could try the 'adam' optimizer
 model.compile(loss='categorical_crossentropy', optimizer=optimizer)#'adam')
