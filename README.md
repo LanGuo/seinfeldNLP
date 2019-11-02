@@ -1,0 +1,2 @@
+Experiments to generate dialogue-style text that may be 'seinfeldish' based on scraped scripts from the show Seinfeld.  This is a fun exercise to get myself more familiar with Deep Learning and NLP.
+Tested n-gram language model, character-level LSTM and word(w2v embedding)-level LSTM.
