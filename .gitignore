@@ -3,6 +3,9 @@ node_modules
 
 # Unprocessed scripts
 seinfeld_raw_scripts
+query_results
+__pycache__
+models
 
 # Mac-specific
 .DS_Store
