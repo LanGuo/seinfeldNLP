@@ -35,3 +35,11 @@ model.save(os.path.join(modelDir, 'word2vec_bigram_{}'.format(dataFile)))
 
 model_word = gensim.models.Word2Vec(sentences, min_count=5, size=100, workers=4)
 model_word.save(os.path.join(modelDir, 'word2vec_word_{}'.format(dataFile)))
+
+print('Checking similar words:')
+test_words = ['house', 'work', 'phone', 'car']
+for word in test_words:
+	for indm, m in enumerate([model, model_word]):
+	    most_similar = ', '.join('%s (%.2f)' % (similar, dist)
+	        for similar, dist in m_word.wv.most_similar(word)[:8])
+	    print('model %s  %s -> %s' % (indm, word, most_similar))

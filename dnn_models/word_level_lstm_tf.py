@@ -5,11 +5,11 @@ import os
 import argparse
 import datetime as dt
 
-"""To run this code, you'll need to first download and extract the text dataset
-    from here: http://www.fit.vutbr.cz/~imikolov/rnnlm/simple-examples.tgz. Change the
-    data_path variable below to your local exraction path"""
+"""Example borrowed from
+https://github.com/adventuresinML/adventures-in-ml-code/blob/master/lstm_tutorial.py"""
 
-data_path = "C:\\Users\Andy\Documents\simple-examples\data"
+data_file = 'all_dialogues'
+data_path = '/home/lan/src/seinfeldNLPNode/query_results/{}.txt'.format(data_file)
 
 parser = argparse.ArgumentParser()
 parser.add_argument('run_opt', type=int, default=1, help='An integer: 1 to train, 2 to test')
