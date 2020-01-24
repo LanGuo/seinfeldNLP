@@ -35,7 +35,7 @@ pip install torch torchvision
 
 Oh by the way, did I mention I only have one GPU (GeForce GTX 1050) on my laptop with 2GB memory?  This is not nearly enough for training such a big model. So I resorted to using CPU for training.
 
-If I run training with `--per_gpu_train_batch_size=4`, which is the default, I needed more RAM than the 15.5GB+8GB swap current available.  One option is to increase the swap to 16GB, thanks to []() for these commands.
+If I run training with `--per_gpu_train_batch_size=4`, which is the default, I needed more RAM than the 15.5GB+8GB swap current available.  One option is to increase the swap to 16GB.  Thanks to [this post](https://bogdancornianu.com/change-swap-size-in-ubuntu/) for the commands below.
 ```
 (huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ sudo swapoff -a
 
@@ -189,5 +189,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzcyNjQ5NDAsMjA2NTQ1NDUwNl19
+eyJoaXN0b3J5IjpbLTE3NDYyMTQ4MTUsMjA2NTQ1NDUwNl19
 -->
