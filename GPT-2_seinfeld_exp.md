@@ -110,9 +110,12 @@ JERRY (to Elaine): Hey, I'm sorry. It's a little late for me to go out with you 
 Hey, more interesting!
 
 
-## Delete a file
+## Some interesting model behavior
 
-You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
+### Difficulty getting the model to generate text following a scene description
+Could this be due to the limited scene description available in the training data (mostly in dialogue-form)? and the unique nature of a scene never before seen?**
+
+**Also, why is the model stopping before reaching max length??**
 
 ## Export a file
 
@@ -233,6 +236,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzOTMyNjU4OCwtNTgxMzk2NDQ1LC0zNz
+eyJoaXN0b3J5IjpbMTQwNDQxMjc2MCwtNTgxMzk2NDQ1LC0zNz
 gyMTUxMTAsMTY5ODI2NDczMSwyMDY1NDU0NTA2XX0=
 -->
