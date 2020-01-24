@@ -12,6 +12,7 @@ I scraped all the Seinfeld scripts from http://www.seinology.com a couple years 
 
 ## Getting started – installation in a Python virtual environment
 The GPT-2 fine-tuning and text generation was made super straightforward by the good folks at [Hugging Face](https://github.com/huggingface).  We'll start by cloning their transformers [repo](https://github.com/huggingface/transformers) into a fresh virtual environment and installing other dependencies.
+
 ```
 python3 -m venv huggingface
 
@@ -150,7 +151,7 @@ It even knows to insert some scene description, such as  "(George enters.)", epi
 ## Wrap up
 I hope this has been a fun read to you, certainly has been an entertaining learning experience for me.  I'll probably be doing more experiments with this, if you have any comments or suggestions for things I can try, please leave a comment or get [in touch](https://github.com/LanGuo/seinfeldNLP/) with me!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTkwMjA5MjkzLDEyODU2MzY0MTYsLTc5Nz
-k1NzA1NCwtNTgxMzk2NDQ1LC0zNzgyMTUxMTAsMTY5ODI2NDcz
-MSwyMDY1NDU0NTA2XX0=
+eyJoaXN0b3J5IjpbMjM4NTA1Nzg3LDk5MDIwOTI5MywxMjg1Nj
+M2NDE2LC03OTc5NTcwNTQsLTU4MTM5NjQ0NSwtMzc4MjE1MTEw
+LDE2OTgyNjQ3MzEsMjA2NTQ1NDUwNl19
 -->
