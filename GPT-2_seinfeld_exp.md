@@ -135,69 +135,18 @@ Jerry walks into a bar, and the waitress is there. JERRY: Hey Jerry!
 ```
 
 ### Making the prompt super general increases the generated text length?
+Here I used a super short and general prompt, and the model got quite talkative!
+```
+Model prompt >>> Jerry: George!
 
-age file publication
+Jerry: George! 
+GEORGE (to the crowd): Hey, hey. I'm gonna go get some coffee and a little something to eat tonight? You know what's better than that?! It'll be great!! Oh yeah...I got this one for you today..(he leaves)..and it was so good!!! So much fun watching your favorite show on TV....you're not even kidding me.....soooooo cool......it really is an amazing experience!!!!!!!!! Jerry : What are ya doing here?? Where do we start??? We gotta have dinner with Elaine right now.......she has no idea how she can make such incredible food out of nothing but her own imagination.........but then again maybe they don't want us there anymore because he doesn' think about them like Kramer does when his parents die.........................(George enters.)........Oh my God........that guy who made those pancakes in front Of The World That Wasn 'em all over him....He just couldn-t stop laughing at himself as if someone had said "Hey look man" or whatever else people say around these parts." He laughs back tearsful laughter from everyone except myself. And after seeing everything happen,the whole thing went down very quickly...then suddenly everybody started talking loudly --they were yelling loud enough--They yelled louder too -And by time somebody came up behind their backs screaming "...You wanna see more?" They screamed harder still."So why did anyone come forward? Because nobody wanted anything done against anybody other Than Himself! Why didn’s anyone tell Mr Seinfeld “Mr Larry David"? Well guess where would've been our next move anyway since Mrs Ollie left home last night................Well wait till tomorrow morning before going anywhere......We will find another place soon..........<|endoftext|>Episode 85 – A Very Merry Christmas
 
-Since one file can be published to multiple locations, you can list and manage publish locations by clicking **File publication** in the **Publish** sub-menu. This allows you to list and remove publication locations that are linked to your file.
-
-
-# Markdown extensions
-
-StackEdit extends the standard Markdown syntax by adding extra **Markdown extensions**, providing you with some nice features.
-
-> **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.
-
-
-## SmartyPants
-
-SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
-
-|                |ASCII                          |HTML                         |
-|----------------|-------------------------------|-----------------------------|
-|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
-|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
-
-
-## KaTeX
-
-You can render LaTeX mathematical expressions using [KaTeX](https://khan.github.io/KaTeX/):
-
-The *Gamma function* satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral
-
-$$
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
-$$
-
-> You can find more information about **LaTeX** mathematical expressions [here](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
-
-
-## UML diagrams
-
-You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
-
-```mermaid
-sequenceDiagram
-Alice ->> Bob: Hello Bob, how are you?
-Bob-->>John: How about you John?
-Bob--x Alice: I am good thanks!
-Bob-x John: I am good thanks!
-Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
-
-Bob-->Alice: Checking with John...
-Alice->John: Yes... John, how are you?
+A few weeks ago while working through work assignments during lunch break,... Free View In iTunes #1 Episode 83 This week Steve joins Andy & Julia along side host John Krasinski (@Kraigsberg). Today Tony talks w/ Jimmy Fallon regarding being fired due *not* having sex; getting married early into life without consenting adults involved); making friends outside marriage via dating sites etc.; meeting new women using fake names instead thereof ; trying different methods including taking off clothes whilst walking alone together under heavy traffic lights which led many men away ); finding love within hours upon arrival inside prison cell only once per day until finally returning safely afterwards ) How long should each episode take!
 ```
 
-And this will produce a flow chart:
-
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
+I hope this has been a fun read to you. I'll probably be doing more experiments with this
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1OTAyNzg1MSwtNTgxMzk2NDQ1LC0zNz
+eyJoaXN0b3J5IjpbMTQ4MDkyMzk1NSwtNTgxMzk2NDQ1LC0zNz
 gyMTUxMTAsMTY5ODI2NDczMSwyMDY1NDU0NTA2XX0=
 -->
