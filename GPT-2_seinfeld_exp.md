@@ -3,15 +3,33 @@
 Hi! This is a first experiment to see if a state-of-the-art language model such as [GPT-2]() can learn to write comedy sitcom in the course of one night.  I thought we might as well let the [transformer]() learn from the best and start it off with the finest material.  [**Seinfeld**](https://www.imdb.com/title/tt0098904/) is my all time favorite comedy show on TV, that's what I'll go with!  
 
 
-# The training (fine-tuning) data
+## The training (fine-tuning) data
 
 I scraped all the Seinfeld scripts from http://www.seinology.com a couple years ago - this site actually doesn’t exist anymore.  Each episode is one text file, I concatenated them with '<|endoftext|>' added to the end of each episode and stripped out excess `\t` and `\n` characters. Pretty minimal cleaning. This generated ~4.5MB of text.
 
 **Data hosted [here](https://raw.githubusercontent.com/LanGuo/seinfeldNLP/master/all_scripts.txt).**
 
-## Create files and folders
+## Getting started – installation in a fresh virtual environment
+The GPT-2 fine-tuning and text generation was made 
+```
+python3 -m venv huggingface
 
-The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.
+source huggingface/bin/activate
+
+mkdir src
+
+cd src/
+
+git clone https://github.com/huggingface/transformers
+
+cd transformers
+
+pip install .
+
+pip install -r ./examples/requirements.txt
+
+pip install torch torchvision
+```
 
 ## Switch to another file
 
@@ -144,5 +162,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDgyMTM2NzMsMjA2NTQ1NDUwNl19
+eyJoaXN0b3J5IjpbMjM2MDkxNzQsMjA2NTQ1NDUwNl19
 -->
