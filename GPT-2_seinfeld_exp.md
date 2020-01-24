@@ -144,9 +144,12 @@ GEORGE (to the crowd): Hey, hey. I'm gonna go get some coffee and a little somet
 
 A few weeks ago while working through work assignments during lunch break,... Free View In iTunes #1 Episode 83 This week Steve joins Andy & Julia along side host John Krasinski (@Kraigsberg). Today Tony talks w/ Jimmy Fallon regarding being fired due *not* having sex; getting married early into life without consenting adults involved); making friends outside marriage via dating sites etc.; meeting new women using fake names instead thereof ; trying different methods including taking off clothes whilst walking alone together under heavy traffic lights which led many men away ); finding love within hours upon arrival inside prison cell only once per day until finally returning safely afterwards ) How long should each episode take!
 ```
+It even knows to insert some scene description, such as  "(George enters.)", episode description "Episode 85 – A Very Merry Christmas" (is this a real episode name??), and even something that looks like promotional content (an interview??) at the end there. Pretty amazing!
 
-I hope this has been a fun read to you, certainly has been an entertaining learning experience for me.  I'll probably be doing more experiments with this, so stay tuned!
+## Wrap up
+I hope this has been a fun read to you, certainly has been an entertaining learning experience for me.  I'll probably be doing more experiments with this, if you have any comments or suggestions for things I can try, please leave a comment or get [in touch](https://github.com/LanGuo/seinfeldNLP/) with me!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5Nzk1NzA1NCwtNTgxMzk2NDQ1LC0zNz
-gyMTUxMTAsMTY5ODI2NDczMSwyMDY1NDU0NTA2XX0=
+eyJoaXN0b3J5IjpbMTI4NTYzNjQxNiwtNzk3OTU3MDU0LC01OD
+EzOTY0NDUsLTM3ODIxNTExMCwxNjk4MjY0NzMxLDIwNjU0NTQ1
+MDZdfQ==
 -->
