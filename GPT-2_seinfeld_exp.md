@@ -10,7 +10,7 @@ I scraped all the Seinfeld scripts from http://www.seinology.com a couple years 
 **Data hosted [here](https://raw.githubusercontent.com/LanGuo/seinfeldNLP/master/all_scripts.txt).**
 
 ## Getting started – installation in a fresh virtual environment
-The GPT-2 fine-tuning and text generation was made 
+The GPT-2 fine-tuning and text generation was made super straightforward by the good folks at [Hugging Face](https://github.com/huggingface).  We'll
 ```
 python3 -m venv huggingface
 
@@ -162,5 +162,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM2MDkxNzQsMjA2NTQ1NDUwNl19
+eyJoaXN0b3J5IjpbLTk0NjY1NzMwOSwyMDY1NDU0NTA2XX0=
 -->
