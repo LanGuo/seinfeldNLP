@@ -9,8 +9,8 @@ I scraped all the Seinfeld scripts from http://www.seinology.com a couple years 
 
 **Data hosted [here](https://raw.githubusercontent.com/LanGuo/seinfeldNLP/master/all_scripts.txt).**
 
-## Getting started – installation in a fresh virtual environment
-The GPT-2 fine-tuning and text generation was made super straightforward by the good folks at [Hugging Face](https://github.com/huggingface).  We'll
+## Getting started – installation in a Python virtual environment
+The GPT-2 fine-tuning and text generation was made super straightforward by the good folks at [Hugging Face](https://github.com/huggingface).  We'll start by cloning their transformers [repo](https://github.com/huggingface/transformers) into a fresh virtual environment and installing other dependencies.
 ```
 python3 -m venv huggingface
 
@@ -31,7 +31,11 @@ pip install -r ./examples/requirements.txt
 pip install torch torchvision
 ```
 
-## Switch to another file
+## Fine tuning
+
+Oh btwI only have one GPU on my laptop (GeForce GTX 1050) with 2GB memory, which is not nearly enough. So I resorted to using CPU for training.**
+
+**If training with `--per_gpu_train_batch_size=4` which is the default needed more RAM than 15.5GB+8GB swap; can increase swap to 16GB (below):**
 
 All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
 
@@ -162,5 +166,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0NjY1NzMwOSwyMDY1NDU0NTA2XX0=
+eyJoaXN0b3J5IjpbLTI0OTYzNzE1NiwyMDY1NDU0NTA2XX0=
 -->
