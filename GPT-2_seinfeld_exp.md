@@ -85,10 +85,13 @@ This whole training (fine-tuning) took about 3 hours on my Intel(R) Core(TM) i7-
 
 ## Text generation 
 
-Now we have trained GPT-2 on Seinfeld scripts!  Can it generate some text that looks like a sitcom script and (dare we hope) is funny? 
-I ive the directory storing the fine-tuned model. If did not set `--repetition_penalty` and use the default (1.0), the output can get very repetitive.
+Now we have trained GPT-2 on Seinfeld scripts!  Can it generate some text that looks like a sitcom script and (dare we hope) is funny?  Let's find out:
+```
+$ python run_generation.py --model_type=gpt2 --model_name_or_path=output/ --length=200 –repetition_penalty=5 --no_cuda
+```
+Here one of the parameter is the directory storing the fine-tuned model (`output`). If did not set `--repetition_penalty` and use the default (1.0), the output can get very repetitive.
 
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
+
 
 ## Delete a file
 
@@ -213,6 +216,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM1MDk1NjM0LC01ODEzOTY0NDUsLTM3OD
+eyJoaXN0b3J5IjpbMTAxNDA0NzQ0LC01ODEzOTY0NDUsLTM3OD
 IxNTExMCwxNjk4MjY0NzMxLDIwNjU0NTQ1MDZdfQ==
 -->
