@@ -89,8 +89,12 @@ Now we have trained GPT-2 on Seinfeld scripts!  Can it generate some text that l
 ```
 $ python run_generation.py --model_type=gpt2 --model_name_or_path=output/ --length=200 –repetition_penalty=1 --no_cuda
 ```
-Notice one of the parameter is the directory storing the fine-tuned model (`output`).  Here I did not set `--repetition_penalty` and use the default (1.0),  the output can get very repetitive - not interesting:
+Notice one of the parameter is the directory storing the fine-tuned model (`output`).  Here I did not set `--repetition_penalty` and use the default (1.0), prompted with some text, the output can get very repetitive and doesn't do anything interesting:
 ```
+Model prompt >>> Elaine: Jerry! George! You guys, listen!
+
+Elaine: Jerry! George! You guys, listen! I'm gonna be here for a while. 
+JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine)!
 ```
 
 
@@ -218,6 +222,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4Nzk1NTIyNCwtNTgxMzk2NDQ1LC0zNz
+eyJoaXN0b3J5IjpbMjEzNzA4MjMxOCwtNTgxMzk2NDQ1LC0zNz
 gyMTUxMTAsMTY5ODI2NDczMSwyMDY1NDU0NTA2XX0=
 -->
