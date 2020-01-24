@@ -115,8 +115,19 @@ Hey, more interesting!
 ### Difficulty in generating text following a scene description
 Could this be due to the limited scene description available in the training data (mostly in dialogue-form), and the unique nature of a scene never before seen?
 For example, it did not have much to say here:
+```
+Model prompt >>> Kramer walks into the bar and headed towards the pool table
 
+Kramer walks into the bar and headed towards the pool table. 
+"Hey, Kramer!
+```
+Notice the generated text stopped way before reaching the maximum length set (500). And here:
+```
+Model prompt >>> Kramer walks into the bar
 
+Kramer walks into the bar, and Kramer is there. KRAMER: Hey!
+```
+It 
 
 ## Export a file
 
@@ -237,6 +248,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyNzAzNTEyNCwtNTgxMzk2NDQ1LC0zNz
-gyMTUxMTAsMTY5ODI2NDczMSwyMDY1NDU0NTA2XX0=
+eyJoaXN0b3J5IjpbLTIwNTM4NTcyNzEsLTU4MTM5NjQ0NSwtMz
+c4MjE1MTEwLDE2OTgyNjQ3MzEsMjA2NTQ1NDUwNl19
 -->
