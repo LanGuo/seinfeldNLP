@@ -37,9 +37,9 @@ Oh by the way, did I mention I only have one GPU (GeForce GTX 1050) on my laptop
 
 If I run training with `--per_gpu_train_batch_size=4`, which is the default, I needed more RAM than the 15.5GB+8GB swap current available.  One option is to increase the swap to 16GB.  Thanks to [this post](https://bogdancornianu.com/change-swap-size-in-ubuntu/) for the commands below.
 ```
-(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ sudo swapoff -a
+$ sudo swapoff -a
 
-(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ sudo dd if=/dev/zero of=/swapfile bs=1G count=16
+$ sudo dd if=/dev/zero of=/swapfile bs=1G count=16
 
 16+0 records in
 
@@ -47,15 +47,15 @@ If I run training with `--per_gpu_train_batch_size=4`, which is the default, I n
 
 17179869184 bytes (17 GB, 16 GiB) copied, 14.0243 s, 1.2 GB/s
 
-(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ sudo mkswap /swapfile
+$ sudo mkswap /swapfile
 
 Setting up swapspace version 1, size = 16 GiB (17179865088 bytes)
 
 no label, UUID=e17a7090-cbe5-4d44-9e44-b5df679b9ea7
 
-(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ sudo swapon /swapfile
+$ sudo swapon /swapfile
 
-(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ grep SwapTotal /proc/meminfo
+$ grep SwapTotal /proc/meminfo
 
 SwapTotal: 16777212 kB
 ```
@@ -87,7 +87,7 @@ This whole training (fine-tuning) took about 3 hours on my Intel(R) Core(TM) i7-
 
 Now we have trained GPT-2 on Seinfeld scripts!  Can it generate some text that looks like a sitcom script and (dare we hope) is funny?  Let's find out:
 ```
-$ python run_generation.py --model_type=gpt2 --model_name_or_path=output/ --length=200 –repetition_penalty=1 --no_cuda
+(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ python run_generation.py --model_type=gpt2 --model_name_or_path=output/ --length=200 –repetition_penalty=1 --no_cuda
 ```
 Notice one of the parameter is the directory storing the fine-tuned model (`output`).  Here I did not set `--repetition_penalty` and use the default (1.0), prompted with some text, the output can get very repetitive and doesn't do anything interesting:
 ```
@@ -149,7 +149,7 @@ It even knows to insert some scene description, such as  "(George enters.)", epi
 ## Wrap up
 I hope this has been a fun read to you, certainly has been an entertaining learning experience for me.  I'll probably be doing more experiments with this, if you have any comments or suggestions for things I can try, please leave a comment or get [in touch](https://github.com/LanGuo/seinfeldNLP/) with me!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4NTYzNjQxNiwtNzk3OTU3MDU0LC01OD
-EzOTY0NDUsLTM3ODIxNTExMCwxNjk4MjY0NzMxLDIwNjU0NTQ1
-MDZdfQ==
+eyJoaXN0b3J5IjpbLTE1NDAyOTYyNDIsMTI4NTYzNjQxNiwtNz
+k3OTU3MDU0LC01ODEzOTY0NDUsLTM3ODIxNTExMCwxNjk4MjY0
+NzMxLDIwNjU0NTQ1MDZdfQ==
 -->
