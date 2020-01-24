@@ -33,9 +33,9 @@ pip install torch torchvision
 
 ## Fine tuning
 
-Oh btwI only have one GPU on my laptop (GeForce GTX 1050) with 2GB memory, which is not nearly enough. So I resorted to using CPU for training.**
+Oh by the way, did I mention I only have one GPU (GeForce GTX 1050) on my laptop with 2GB memory?  This is not nearly enough for training such a big model. So I resorted to using CPU for training.
 
-**If training with `--per_gpu_train_batch_size=4` which is the default needed more RAM than 15.5GB+8GB swap; can increase swap to 16GB (below):**
+If I run training with `--per_gpu_train_batch_size=4`, which is the default, I needed more RAM than the 15.5GB+8GB swap ; ca increase swap to 16GB (below):
 
 All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
 
@@ -166,5 +166,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0OTYzNzE1NiwyMDY1NDU0NTA2XX0=
+eyJoaXN0b3J5IjpbLTE4NzYwODczNjgsMjA2NTQ1NDUwNl19
 -->
