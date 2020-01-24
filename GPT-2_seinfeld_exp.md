@@ -80,10 +80,12 @@ I used pretty much all default parameters for training, and did not do evaluatio
 ```
 Training/evaluation parameters Namespace(adam_epsilon=1e-08, block_size=1024, cache_dir='', config_name='', device=device(type='cpu'), do_eval=False, do_lower_case=False, do_train=True, eval_all_checkpoints=False, eval_data_file=None, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=4, learning_rate=5e-05, local_rank=-1, logging_steps=50, max_grad_norm=1.0, max_steps=-1, mlm=False, mlm_probability=0.15, model_name_or_path='gpt2', model_type='gpt2', n_gpu=1, no_cuda=True, num_train_epochs=1.0, output_dir='output', overwrite_cache=False, overwrite_output_dir=False, per_gpu_eval_batch_size=4, per_gpu_train_batch_size=1, save_steps=50, save_total_limit=None, seed=42, server_ip='', server_port='', tokenizer_name='', train_data_file='./all_scripts.txt', warmup_steps=0, weight_decay=0.0)
 ```
-This whole training (fine-tuning) took about 3 hours on my Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz.  Running the fine-tuning script generates an `output` directory, with the specified checkpoints (in the default setting, every 50 steps) saved.  You will need this directory to load back the saved model configuration and weights.
+This whole training (fine-tuning) took about 3 hours on my Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz.  Running the fine-tuning script generates an `output` directory, with the specified checkpoints (in the default setting, every 50 steps) saved.  You will need this directory to load back the fine-tuned model and tokenizer configuration and weights.
 
 
-## Rename a file
+## Text generation 
+
+Give the directory storing the fine-tuned model. If did not set `--repetition_penalty` and use the default (1.0), the output can get very repetitive.**
 
 You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
 
@@ -210,6 +212,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4MTM5NjQ0NSwtMzc4MjE1MTEwLDE2OT
-gyNjQ3MzEsMjA2NTQ1NDUwNl19
+eyJoaXN0b3J5IjpbLTM5NDgwMzE4MiwtNTgxMzk2NDQ1LC0zNz
+gyMTUxMTAsMTY5ODI2NDczMSwyMDY1NDU0NTA2XX0=
 -->
