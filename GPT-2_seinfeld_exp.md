@@ -112,10 +112,11 @@ Hey, more interesting!
 
 ## Some interesting model behavior
 
-### Difficulty getting the model to generate text following a scene description
-Could this be due to the limited scene description available in the training data (mostly in dialogue-form)? and the unique nature of a scene never before seen?**
+### Difficulty in generating text following a scene description
+Could this be due to the limited scene description available in the training data (mostly in dialogue-form), and the unique nature of a scene never before seen?
+For example, it did not have much to say here:
 
-**Also, why is the model stopping before reaching max length??**
+
 
 ## Export a file
 
@@ -236,6 +237,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwNDQxMjc2MCwtNTgxMzk2NDQ1LC0zNz
+eyJoaXN0b3J5IjpbMTQyNzAzNTEyNCwtNTgxMzk2NDQ1LC0zNz
 gyMTUxMTAsMTY5ODI2NDczMSwyMDY1NDU0NTA2XX0=
 -->
