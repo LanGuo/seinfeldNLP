@@ -60,6 +60,8 @@ no label, UUID=e17a7090-cbe5-4d44-9e44-b5df679b9ea7
 SwapTotal: 16777212 kB
 ```
 Another option, which I ended up doing, is to train with `--per_gpu_train_batch_size=1 --gradient_accumulation_steps=4`, this works on 15.5GB of RAM.
+
+**Editor: would l**
 ```
 (huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ python run_lm_finetuning.py \ 
 --no_cuda \
@@ -205,5 +207,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5ODI2NDczMSwyMDY1NDU0NTA2XX0=
+eyJoaXN0b3J5IjpbLTU5ODQ3MTE1MSwxNjk4MjY0NzMxLDIwNj
+U0NTQ1MDZdfQ==
 -->
