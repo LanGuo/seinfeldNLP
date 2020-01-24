@@ -61,7 +61,15 @@ SwapTotal: 16777212 kB
 ```
 Another option, which I ended up doing, is to train with `--per_gpu_train_batch_size=1 --gradient_accumulation_steps=4`, this works on 15.5GB of RAM.
 ```
-(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ python run_lm_finetuning.py --no_cuda --output_dir=output --model_type=gpt2 --model_name_or_path=gpt2 --do_train --train_data_file=/home/lan/src/seinfeldNLPNode/query_results/all_scripts.txt --per_gpu_train_batch_size=1 --gradient_accumulation_steps=4
+(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ python run_lm_finetuning.py \ 
+--no_cuda \
+--output_dir=output \
+--model_type=gpt2 \
+--model_name_or_path=gpt2 \
+--do_train \
+--train_data_file=./all_scripts.txt \
+--per_gpu_train_batch_size=1 \
+--gradient_accumulation_steps=4
 ```
 **Used pretty much default parameters for training, did not do evaluation:**
 
@@ -197,5 +205,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwMjI0NTE3MiwyMDY1NDU0NTA2XX0=
+eyJoaXN0b3J5IjpbLTIwNjc5NzA5MiwyMDY1NDU0NTA2XX0=
 -->
