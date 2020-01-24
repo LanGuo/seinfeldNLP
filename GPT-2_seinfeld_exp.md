@@ -100,6 +100,15 @@ Let's try to increase the length of generated text, as well as increase the repe
 ```
 $ python run_generation.py --model_type=gpt2 --model_name_or_path=output/ --length=200 –repetition_penalty=5 --no_cuda
 ```
+It came up with something like this with the same prompt:
+```
+Model prompt >>> Elaine: Jerry! George! You guys listen!
+
+Elaine: Jerry! George! You guys listen! 
+JERRY (to Elaine): Hey, I'm sorry. It's a little late for me to go out with you today but it was nice meeting ya again and we're gonna have some fun tonight...I'll see y'all later on in the day.." "Oh yeah? What are they doing here?" Kramer enters from his apartment wearing an orange jacket that he has been carrying since last night - this is what looks like something made of rubber gloves or plastic bags. He walks into another room where there isn't much else going around except one thing at least :) The door opens behind him, revealing himself as Mr Puddy Ross Jr., who sits down next Toppleman & Co.'s office building overlooking Broadway Street between Eighth Avenue Sandler Boulevard E-6A/B&C Blvd.(Jerry can hear them talking.) They've got their own offices right across street; so if!
+```
+Hey, more interesting!
+
 
 ## Delete a file
 
@@ -224,6 +233,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0NDk0ODk1NiwtNTgxMzk2NDQ1LC0zNz
+eyJoaXN0b3J5IjpbMjAzOTMyNjU4OCwtNTgxMzk2NDQ1LC0zNz
 gyMTUxMTAsMTY5ODI2NDczMSwyMDY1NDU0NTA2XX0=
 -->
