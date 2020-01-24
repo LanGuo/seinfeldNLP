@@ -1,6 +1,6 @@
 # GPT-2 writing comedy sitcom?
 
-Hi! This is a first experiment to see if a state-of-the-art language model such as [GPT-2]() can learn to write comedy sitcom in the course of one evening. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
+Hi! This is a first experiment to see if a state-of-the-art language model such as [GPT-2]() can learn to write comedy sitcom in the course of one night. [**Seinfeld**]() was my favorite cositcom, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
 
 
 # Files
@@ -142,5 +142,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTM2NzE5NDQ2XX0=
+eyJoaXN0b3J5IjpbMTAzNDQ0NzA5N119
 -->
