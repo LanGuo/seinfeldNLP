@@ -87,9 +87,11 @@ This whole training (fine-tuning) took about 3 hours on my Intel(R) Core(TM) i7-
 
 Now we have trained GPT-2 on Seinfeld scripts!  Can it generate some text that looks like a sitcom script and (dare we hope) is funny?  Let's find out:
 ```
-$ python run_generation.py --model_type=gpt2 --model_name_or_path=output/ --length=200 –repetition_penalty=5 --no_cuda
+$ python run_generation.py --model_type=gpt2 --model_name_or_path=output/ --length=200 –repetition_penalty=1 --no_cuda
 ```
-Here one of the parameter is the directory storing the fine-tuned model (`output`). If did not set `--repetition_penalty` and use the default (1.0), the output can get very repetitive.
+Notice one of the parameter is the directory storing the fine-tuned model (`output`).  Here I did not set `--repetition_penalty` and use the default (1.0),  the output can get very repetitive - not interesting:
+```
+```
 
 
 
@@ -216,6 +218,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxNDA0NzQ0LC01ODEzOTY0NDUsLTM3OD
-IxNTExMCwxNjk4MjY0NzMxLDIwNjU0NTQ1MDZdfQ==
+eyJoaXN0b3J5IjpbMTk4Nzk1NTIyNCwtNTgxMzk2NDQ1LC0zNz
+gyMTUxMTAsMTY5ODI2NDczMSwyMDY1NDU0NTA2XX0=
 -->
