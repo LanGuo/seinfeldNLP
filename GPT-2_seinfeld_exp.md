@@ -8,6 +8,7 @@ Hi! This is a first experiment to see if a state-of-the-art language model such 
 I scraped all the Seinfeld scripts from http://www.seinology.com a couple years ago - this site actually doesn’t exist anymore.  Each episode is one text file, I concatenated them with '<|endoftext|>' added to the end of each episode and stripped out excess `\t` and `\n` characters. Pretty minimal cleaning. This generated ~4.5MB of text.
 
 **Data hosted [here](https://raw.githubusercontent.com/LanGuo/seinfeldNLP/master/all_scripts.txt).**
+**Editor: it is violating a to put this data out there?**
 
 ## Getting started – installation in a Python virtual environment
 The GPT-2 fine-tuning and text generation was made super straightforward by the good folks at [Hugging Face](https://github.com/huggingface).  We'll start by cloning their transformers [repo](https://github.com/huggingface/transformers) into a fresh virtual environment and installing other dependencies.
@@ -144,12 +145,12 @@ GEORGE (to the crowd): Hey, hey. I'm gonna go get some coffee and a little somet
 
 A few weeks ago while working through work assignments during lunch break,... Free View In iTunes #1 Episode 83 This week Steve joins Andy & Julia along side host John Krasinski (@Kraigsberg). Today Tony talks w/ Jimmy Fallon regarding being fired due *not* having sex; getting married early into life without consenting adults involved); making friends outside marriage via dating sites etc.; meeting new women using fake names instead thereof ; trying different methods including taking off clothes whilst walking alone together under heavy traffic lights which led many men away ); finding love within hours upon arrival inside prison cell only once per day until finally returning safely afterwards ) How long should each episode take!
 ```
-It even knows to insert some scene description, such as  "(George enters.)", episode description "Episode 85 – A Very Merry Christmas" (is this a real episode name??), and even something that looks like promotional content (an interview??) at the end there. Pretty amazing!
+It even knows to insert some scene description, such as  "(George enters.)", episode description "Episode 85 – A Very Merry Christmas" (a made-up episode name!), and even something that looks like promotional content (an interview?) at the end there. Pretty amazing!
 
 ## Wrap up
 I hope this has been a fun read to you, certainly has been an entertaining learning experience for me.  I'll probably be doing more experiments with this, if you have any comments or suggestions for things I can try, please leave a comment or get [in touch](https://github.com/LanGuo/seinfeldNLP/) with me!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDAyOTYyNDIsMTI4NTYzNjQxNiwtNz
-k3OTU3MDU0LC01ODEzOTY0NDUsLTM3ODIxNTExMCwxNjk4MjY0
-NzMxLDIwNjU0NTQ1MDZdfQ==
+eyJoaXN0b3J5IjpbNjk1NDQxNjM2LDEyODU2MzY0MTYsLTc5Nz
+k1NzA1NCwtNTgxMzk2NDQ1LC0zNzgyMTUxMTAsMTY5ODI2NDcz
+MSwyMDY1NDU0NTA2XX0=
 -->
