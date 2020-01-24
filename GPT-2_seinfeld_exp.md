@@ -85,7 +85,8 @@ This whole training (fine-tuning) took about 3 hours on my Intel(R) Core(TM) i7-
 
 ## Text generation 
 
-Give the directory storing the fine-tuned model. If did not set `--repetition_penalty` and use the default (1.0), the output can get very repetitive.**
+Now we have trained GPT-2 on Seinfeld scripts!  Can it generate some text that looks like a sitcom script and (dare we hope) is funny? 
+I ive the directory storing the fine-tuned model. If did not set `--repetition_penalty` and use the default (1.0), the output can get very repetitive.
 
 You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
 
@@ -212,6 +213,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5NDgwMzE4MiwtNTgxMzk2NDQ1LC0zNz
-gyMTUxMTAsMTY5ODI2NDczMSwyMDY1NDU0NTA2XX0=
+eyJoaXN0b3J5IjpbNzM1MDk1NjM0LC01ODEzOTY0NDUsLTM3OD
+IxNTExMCwxNjk4MjY0NzMxLDIwNjU0NTQ1MDZdfQ==
 -->
