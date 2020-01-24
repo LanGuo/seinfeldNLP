@@ -1,6 +1,6 @@
 # GPT-2 writing comedy sitcom?
 
-Hi! This is a first experiment to see if a state-of-the-art language model such as [GPT-2]() can learn to write comedy sitcom in the course of one night.  I thought we might as well let the [transformer]() learn from the best and start it off with the finest material.  [**Seinfeld**](https://www.imdb.com/title/tt0098904/) is my all time favorite comedy show on TV, that's what I'll go with!  
+Hi! This is a first experiment to see if a state-of-the-art language model such as [GPT-2](https://github.com/openai/gpt-2) can learn to write comedy sitcom in the course of one night.  I thought we might as well let the [transformer](https://jalammar.github.io/illustrated-transformer/) learn from the best and start it off with the finest material.  [**Seinfeld**](https://www.imdb.com/title/tt0098904/) is my all time favorite comedy show on TV, that's what I'll go with!  
 
 
 ## The training (fine-tuning) data
@@ -150,7 +150,7 @@ It even knows to insert some scene description, such as  "(George enters.)", epi
 ## Wrap up
 I hope this has been a fun read to you, certainly has been an entertaining learning experience for me.  I'll probably be doing more experiments with this, if you have any comments or suggestions for things I can try, please leave a comment or get [in touch](https://github.com/LanGuo/seinfeldNLP/) with me!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxNDQ1MTIyMiwxMjg1NjM2NDE2LC03OT
-c5NTcwNTQsLTU4MTM5NjQ0NSwtMzc4MjE1MTEwLDE2OTgyNjQ3
-MzEsMjA2NTQ1NDUwNl19
+eyJoaXN0b3J5IjpbOTkwMjA5MjkzLDEyODU2MzY0MTYsLTc5Nz
+k1NzA1NCwtNTgxMzk2NDQ1LC0zNzgyMTUxMTAsMTY5ODI2NDcz
+MSwyMDY1NDU0NTA2XX0=
 -->
