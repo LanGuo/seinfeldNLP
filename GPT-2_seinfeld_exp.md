@@ -80,7 +80,7 @@ I used pretty much all default parameters for training, and did not do evaluatio
 ```
 Training/evaluation parameters Namespace(adam_epsilon=1e-08, block_size=1024, cache_dir='', config_name='', device=device(type='cpu'), do_eval=False, do_lower_case=False, do_train=True, eval_all_checkpoints=False, eval_data_file=None, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=4, learning_rate=5e-05, local_rank=-1, logging_steps=50, max_grad_norm=1.0, max_steps=-1, mlm=False, mlm_probability=0.15, model_name_or_path='gpt2', model_type='gpt2', n_gpu=1, no_cuda=True, num_train_epochs=1.0, output_dir='output', overwrite_cache=False, overwrite_output_dir=False, per_gpu_eval_batch_size=4, per_gpu_train_batch_size=1, save_steps=50, save_total_limit=None, seed=42, server_ip='', server_port='', tokenizer_name='', train_data_file='/home/lan/src/seinfeldNLPNode/query_results/all_scripts.txt', warmup_steps=0, weight_decay=0.0)
 ```
-This whole training (fine-tuning) took about 3 hours on my Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz.
+This whole training (fine-tuning) took about 3 hours on my Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz.  Running the fine-tuning script generates an `output` directory with the specified checkpoints (in the default setting, every 50 steps) saved.
 
 
 ## Rename a file
@@ -210,6 +210,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3ODIxNTExMCwxNjk4MjY0NzMxLDIwNj
-U0NTQ1MDZdfQ==
+eyJoaXN0b3J5IjpbLTQ4NTc3MTM1OCwtMzc4MjE1MTEwLDE2OT
+gyNjQ3MzEsMjA2NTQ1NDUwNl19
 -->
