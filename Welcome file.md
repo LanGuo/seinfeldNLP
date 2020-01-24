@@ -5,9 +5,9 @@ Hi! This is a first experiment to see if a state-of-the-art language model such 
 
 # The training (fine-tuning) data
 
-I scraped all the Seinfeld scripts from http://www.seinology.com a couple years ago - this site actually doesn’t exist anymore.  Each episode is one text file, I concatenated them with '<|endoftext|>' added to the end of each episode, stripped out excess `\t` and `\n` characters, minimal cleaning. This generated ~4.5MB of text.**
+I scraped all the Seinfeld scripts from http://www.seinology.com a couple years ago - this site actually doesn’t exist anymore.  Each episode is one text file, I concatenated them with '<|endoftext|>' added to the end of each episode and stripped out excess `\t` and `\n` characters. Pretty minimal cleaning. This generated ~4.5MB of text.
 
-**Data hosted here: [github??]**
+**Data hosted here: []**
 
 ## Create files and folders
 
@@ -144,5 +144,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxNTY5MzI3MF19
+eyJoaXN0b3J5IjpbMjA2NTQ1NDUwNl19
 -->
