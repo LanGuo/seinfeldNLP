@@ -1,9 +1,9 @@
 # GPT-2 writing comedy sitcom?
 
-Hi! This is a first experiment to see if a state-of-the-art language model such as [GPT-2]() can learn to write comedy sitcom in the course of one night. [**Seinfeld**]() was my favorite comedy show on TV of all time.  I thought to start this project off with the finest material so .
+Hi! This is a first experiment to see if a state-of-the-art language model such as [GPT-2]() can learn to write comedy sitcom in the course of one night.  I thought we might as well let the [transformer]() learn from the best and start it off with the finest material.  [**Seinfeld**]() was my all time favorite comedy show on TV, that's what I'll go with!  
 
 
-# Files
+# The training (fine-tuning) data
 
 StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
 
@@ -142,5 +142,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjgwMTA0OThdfQ==
+eyJoaXN0b3J5IjpbLTE5MDY3MTI2NF19
 -->
