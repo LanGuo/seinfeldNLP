@@ -96,8 +96,10 @@ Model prompt >>> Elaine: Jerry! George! You guys, listen!
 Elaine: Jerry! George! You guys, listen! I'm gonna be here for a while. 
 JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine) I'm sorry. ELAINE: (to Jerry) I'm sorry. JERRY: (to Elaine)!
 ```
-
-
+Let's try to increase the length of generated text, as well as increase the repetition penalty (this changes the model behavior from always picking the predicted output with the highest likelihood to choosing somewhat randomly from the top N).  This generation unfortunately also needs to be run on CPU (with `--no_cuda`) since GPU quickly ran out of the 2GB memory.
+```
+$ python run_generation.py --model_type=gpt2 --model_name_or_path=output/ --length=200 –repetition_penalty=5 --no_cuda
+```
 
 ## Delete a file
 
@@ -222,6 +224,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzNzA4MjMxOCwtNTgxMzk2NDQ1LC0zNz
+eyJoaXN0b3J5IjpbMTI0NDk0ODk1NiwtNTgxMzk2NDQ1LC0zNz
 gyMTUxMTAsMTY5ODI2NDczMSwyMDY1NDU0NTA2XX0=
 -->
