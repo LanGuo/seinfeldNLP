@@ -1,13 +1,13 @@
 # GPT-2 writing comedy sitcom?
 
-Hi! This is a first experiment to see if a state-of-the-art language model such as [GPT-2]() can learn to write comedy sitcom in the course of one night.  I thought we might as well let the [transformer]() learn from the best and start it off with the finest material.  [**Seinfeld**]() was my all time favorite comedy show on TV, that's what I'll go with!  
+Hi! This is a first experiment to see if a state-of-the-art language model such as [GPT-2]() can learn to write comedy sitcom in the course of one night.  I thought we might as well let the [transformer]() learn from the best and start it off with the finest material.  [**Seinfeld**](https://www.imdb.com/title/tt0098904/) is my all time favorite comedy show on TV, that's what I'll go with!  
 
 
 # The training (fine-tuning) data
 
 I scraped all the Seinfeld scripts from http://www.seinology.com a couple years ago - this site actually doesn’t exist anymore.  Each episode is one text file, I concatenated them with '<|endoftext|>' added to the end of each episode and stripped out excess `\t` and `\n` characters. Pretty minimal cleaning. This generated ~4.5MB of text.
 
-**Data hosted here: []**
+**Data hosted [here](https://raw.githubusercontent.com/LanGuo/seinfeldNLP/master/all_scripts.txt).**
 
 ## Create files and folders
 
@@ -144,5 +144,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2NTQ1NDUwNl19
+eyJoaXN0b3J5IjpbLTE4NDgyMTM2NzMsMjA2NTQ1NDUwNl19
 -->
