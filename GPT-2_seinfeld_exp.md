@@ -59,7 +59,15 @@ no label, UUID=e17a7090-cbe5-4d44-9e44-b5df679b9ea7
 
 SwapTotal: 16777212 kB
 ```
+Another option, which I ended up doing, is to train with `--per_gpu_train_batch_size=1 --gradient_accumulation_steps=4`, this works on 15.5GB of RAM.
+```
+(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ python run_lm_finetuning.py --no_cuda --output_dir=output --model_type=gpt2 --model_name_or_path=gpt2 --do_train --train_data_file=/home/lan/src/seinfeldNLPNode/query_results/all_scripts.txt --per_gpu_train_batch_size=1 --gradient_accumulation_steps=4
+```
+**Used pretty much default parameters for training, did not do evaluation:**
 
+**Training/evaluation parameters Namespace(adam_epsilon=1e-08, block_size=1024, cache_dir='', config_name='', device=device(type='cpu'), do_eval=False, do_lower_case=False, do_train=True, eval_all_checkpoints=False, eval_data_file=None, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=4, learning_rate=5e-05, local_rank=-1, logging_steps=50, max_grad_norm=1.0, max_steps=-1, mlm=False, mlm_probability=0.15, model_name_or_path='gpt2', model_type='gpt2', n_gpu=1, no_cuda=True, num_train_epochs=1.0, output_dir='output', overwrite_cache=False, overwrite_output_dir=False, per_gpu_eval_batch_size=4, per_gpu_train_batch_size=1, save_steps=50, save_total_limit=None, seed=42, server_ip='', server_port='', tokenizer_name='', train_data_file='/home/lan/src/seinfeldNLPNode/query_results/all_scripts.txt', warmup_steps=0, weight_decay=0.0)**
+
+**This training took ~3 hours on Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz**
 All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
 
 ## Rename a file
@@ -189,5 +197,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDYyMTQ4MTUsMjA2NTQ1NDUwNl19
+eyJoaXN0b3J5IjpbLTgwMjI0NTE3MiwyMDY1NDU0NTA2XX0=
 -->
