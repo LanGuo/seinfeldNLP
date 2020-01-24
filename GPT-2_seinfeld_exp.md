@@ -35,7 +35,30 @@ pip install torch torchvision
 
 Oh by the way, did I mention I only have one GPU (GeForce GTX 1050) on my laptop with 2GB memory?  This is not nearly enough for training such a big model. So I resorted to using CPU for training.
 
-If I run training with `--per_gpu_train_batch_size=4`, which is the default, I needed more RAM than the 15.5GB+8GB swap ; ca increase swap to 16GB (below):
+If I run training with `--per_gpu_train_batch_size=4`, which is the default, I needed more RAM than the 15.5GB+8GB swap current available.  One option is to increase the swap to 16GB:
+```
+(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ sudo swapoff -a
+
+(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ sudo dd if=/dev/zero of=/swapfile bs=1G count=16
+
+16+0 records in
+
+16+0 records out
+
+17179869184 bytes (17 GB, 16 GiB) copied, 14.0243 s, 1.2 GB/s
+
+(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ sudo mkswap /swapfile
+
+Setting up swapspace version 1, size = 16 GiB (17179865088 bytes)
+
+no label, UUID=e17a7090-cbe5-4d44-9e44-b5df679b9ea7
+
+(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ sudo swapon /swapfile
+
+(huggingface) (base) ~/virtual_envs/huggingface/src/transformers/examples master $ grep SwapTotal /proc/meminfo
+
+SwapTotal: 16777212 kB
+```
 
 All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
 
@@ -166,5 +189,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzYwODczNjgsMjA2NTQ1NDUwNl19
+eyJoaXN0b3J5IjpbMTUxODkwMTk1NSwyMDY1NDU0NTA2XX0=
 -->
