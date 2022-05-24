@@ -6,6 +6,6 @@ nltk==3.4.5
 numpy==1.16.3
 python-dateutil==2.7.3
 scipy==1.0.0
-tensorflow==1.15.2
+tensorflow==2.6.4
 tensorflow-tensorboard==0.4.0rc3
 
